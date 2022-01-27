@@ -1,0 +1,33 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local TextButton = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextButton.Parent = ScreenGui
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.Position = UDim2.new(0, 0, 0.301790267, 0)
+TextButton.Size = UDim2.new(0, 200, 0, 50)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+
+-- Scripts:
+
+local function NVTNP_fake_script() -- TextButton.Main 
+	local script = Instance.new('LocalScript', TextButton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+	print ("Player Clicked")
+	game.Workspace.VonickLeash.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+	game.Workspace.VonickLeash.Animate.jump.jump.AnimationId =  "http://www.roblox.com/asset/?id=1083218792"
+	end)	
+end
+coroutine.wrap(NVTNP_fake_script)()
